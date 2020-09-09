@@ -38,5 +38,6 @@ func findElements(i int, s *goquery.Selection) {
 }
 
 func main() {
+	// goroutineの形 wg = sync.WaitGroupを使う形へ
 	scrape()
 }
