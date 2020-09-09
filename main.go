@@ -30,8 +30,11 @@ func scrape() {
 
 func findElements(i int, s *goquery.Selection) {
 	title := s.Text()
-	// title := s.Find("a").Find("img").Text()
-	fmt.Printf("title: %s\n", title)
+	url, exists := s.Find("a").Find("img").Attr("src")
+	if exists != true {
+		log.Fatalln("image not exists")
+	}
+	fmt.Printf("title: %s, image: %s\n", title, url)
 }
 
 func main() {
