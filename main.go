@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/sclevine/agouti"
+	// "github.com/sclevine/agouti"
 )
 
 func scrape() {
@@ -39,10 +39,15 @@ func findElements(i int, s *goquery.Selection) {
 }
 
 func main() {
-	driver := agouti.ChromeDriver(agouti.Browser("chrome"))
-	if err := driver.Start(); err != nil {
-		log.Fatalf("Failed to start driver: %v", err)
-	}
+	// options := agouti.ChromeOptions(
+	// 	"args", []string{
+	// 		"--headless", "--disable-gpu",
+	// 	},
+	// )
+	// driver := agouti.ChromeDriver(agouti.Browser("chrome"), agouti.Debug, options)
+	// if err := driver.Start(); err != nil {
+	// 	log.Fatalf("Failed to start driver: %v", err)
+	// }
 	// goroutineの形 wg = sync.WaitGroupを使う形へ
 	scrape()
 }
